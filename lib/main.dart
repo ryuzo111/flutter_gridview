@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'grid_view_page.dart';
 import 'sliver_app_bar_page.dart';
+import 'shrinkable_footer_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: const GridViewPage(),
-      home: const SliverAppBarPage(),
+      // home: const SliverAppBarPage(),
+      home: const ShrinkableFooterPage(),
     );
   }
 }
