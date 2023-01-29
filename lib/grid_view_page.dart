@@ -9,13 +9,41 @@ class GridViewPage extends StatefulWidget {
 }
 
 class _GridViewPageState extends State<GridViewPage> {
+  int _columnsCount = 2;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      floatingActionButton:
+          Column(mainAxisAlignment: MainAxisAlignment.end, children: <Widget>[
+        FloatingActionButton(
+          onPressed: () {},
+          child: Icon(
+            Icons.grid_on,
+            color: Colors.white,
+          ),
+        ),
+        SizedBox(
+          height: 16,
+        ),
+        FloatingActionButton(
+          onPressed: () {},
+          child: Icon(
+            Icons.grid_off,
+            color: Colors.white,
+          ),
+        ),
+        SizedBox(
+          height: 16,
+        ),
+        FloatingActionButton(
+          onPressed: () {},
+          child: Icon(
+            Icons.arrow_upward,
+            color: Colors.white,
+          ),
+        ),
+      ]),
       body: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
