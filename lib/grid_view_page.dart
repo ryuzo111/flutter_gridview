@@ -9,7 +9,8 @@ class GridViewPage extends StatefulWidget {
 }
 
 class _GridViewPageState extends State<GridViewPage> {
-  int _columnsCount = 2;
+  int _columnsCount = 2; //dartではプライベート変数は_のみで表記できる
+  // finalはすでに宣言された変数を代入すると、finalはコンパイルで評価しないためエラーにはならないが、constではエラーになる
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +18,11 @@ class _GridViewPageState extends State<GridViewPage> {
       floatingActionButton:
           Column(mainAxisAlignment: MainAxisAlignment.end, children: <Widget>[
         FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            if (_columnsCount < 3) {
+              setState(() => {_columnsCount++});
+            }
+          },
           child: Icon(
             Icons.grid_on,
             color: Colors.white,
@@ -27,7 +32,11 @@ class _GridViewPageState extends State<GridViewPage> {
           height: 16,
         ),
         FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            if (_columnsCount > 2) {
+              setState(() => {_columnsCount--});
+            }
+          },
           child: Icon(
             Icons.grid_off,
             color: Colors.white,
@@ -46,7 +55,7 @@ class _GridViewPageState extends State<GridViewPage> {
       ]),
       body: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
+          crossAxisCount: _columnsCount,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
         ),
