@@ -1,47 +1,40 @@
 import 'package:flutter/material.dart';
 
 class GridViewPage extends StatefulWidget {
-  const GridViewPage({super.key, required this.title});
-  final String title;
+  const GridViewPage({super.key});
+  // final String title;
 
   @override
   State<GridViewPage> createState() => _GridViewPageState();
 }
 
 class _GridViewPageState extends State<GridViewPage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      appBar: AppBar(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+      ), // This trailing comma makes auto-formatting nicer for build methods.
+      body: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+        ),
+        itemBuilder: (context, index) => Container(
+          color: Colors.black,
+          child: Center(
+            child: Text(
+              index.toString(),
+              style: TextStyle(
+                fontSize: 42,
+                color: Colors.white,
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
