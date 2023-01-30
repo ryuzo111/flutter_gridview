@@ -20,6 +20,8 @@ class _ResponsiveDesignPage extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return Center(
       child: Column(
         children: <Widget>[
@@ -44,8 +46,8 @@ class _ResponsiveDesignPage extends StatelessWidget {
           //   height: 60,
           // ),
           Spacer(),
-          const FlutterLogo(
-            size: 240,
+          FlutterLogo(
+            size: height * 0.3,
           ),
           // const SizedBox(
           //   height: 60,
