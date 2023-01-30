@@ -14,4 +14,13 @@ A new Flutter project.
 <img src="https://user-images.githubusercontent.com/73731762/215324156-6609c890-39c4-4411-b7e4-af4ef5afb75b.png" width=300 />
 <img src="https://user-images.githubusercontent.com/73731762/215324166-340cbdfa-c1b7-4be1-b6d6-8f0dbc95f935.png" width=300 />
 
+## 様々なサイズに対応する
+<img src="https://user-images.githubusercontent.com/73731762/215512355-42e96200-35dc-481e-beac-f832adc7771c.png" width=300 />
+<img src="https://user-images.githubusercontent.com/73731762/215512328-81fa859f-5703-4e27-8862-581d7c2d91c6.png" height=200 />
+<ul>
+<li>Spacerを使ってflexなデザインを指定する</li>
+<li>MediaQueryでデバイスの縦と横を取得</li>
+<li>ConstrainedBoxで最大値を設定する</li>
+<li>ランドスケープの場合のif文で柔軟な対応をする</li>
+
 ## その他
