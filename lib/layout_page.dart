@@ -23,9 +23,10 @@ class _ResponsiveDesignPage extends StatelessWidget {
     return Center(
       child: Column(
         children: <Widget>[
-          const SizedBox(
-            height: 60,
-          ),
+          // const SizedBox(
+          //   height: 60,
+          // ),
+          Spacer(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 50),
             child: Text(
@@ -39,15 +40,17 @@ class _ResponsiveDesignPage extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(
-            height: 60,
-          ),
+          // const SizedBox(
+          //   height: 60,
+          // ),
+          Spacer(),
           const FlutterLogo(
             size: 240,
           ),
-          const SizedBox(
-            height: 60,
-          ),
+          // const SizedBox(
+          //   height: 60,
+          // ),
+          Spacer(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 50),
             child: Text(
@@ -60,9 +63,10 @@ class _ResponsiveDesignPage extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(
-            height: 60,
-          ),
+          // const SizedBox(
+          //   height: 60,
+          // ),
+          Spacer(),
           SizedBox(
             height: 42,
             width: 300,
@@ -90,9 +94,10 @@ class _ResponsiveDesignPage extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(
-            height: 60,
-          ),
+          // const SizedBox(
+          //   height: 60,
+          // ),
+          Spacer(),
         ],
       ),
     );
