@@ -40,11 +40,11 @@ class _SliverAppBarPageState extends State<SliverAppBarPage> {
           slivers: [
             SliverAppBar(
               backgroundColor: Colors.blueAccent.withOpacity(0.3),
-              floating: true,
-              pinned: true,
-              snap: false,
-              expandedHeight: 180,
-              toolbarHeight: 60,
+              floating: true, //AppBarに向かってスクロールすると同時にAppBarを表示するかどうかを設定
+              pinned: true, // スクロールした時にAPpppBarを表示させるかどうかの設定
+              snap: false, //AppBarに向かってスクロールするとAppbarを完全に展開するかどうか
+              expandedHeight: 180, // appbarが展開されたときの高さ
+              toolbarHeight: 60, //タイトルや画像などAppBarの内容に当たる部分
               flexibleSpace: FlexibleSpaceBar(
                 title: Text('記事カテゴリー'),
                 background: Container(
