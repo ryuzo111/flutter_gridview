@@ -139,21 +139,25 @@ class _BottomNavigationBar extends StatelessWidget {
           children: [
             _IconTextItem(
               deviceWidth: width,
+              isHiding: isHiding,
               icon: Icons.home,
               title: 'Home',
             ),
             _IconTextItem(
               deviceWidth: width,
+              isHiding: isHiding,
               icon: Icons.star,
               title: 'Favorite',
             ),
             _IconTextItem(
               deviceWidth: width,
+              isHiding: isHiding,
               icon: Icons.favorite,
               title: 'Like',
             ),
             _IconTextItem(
               deviceWidth: width,
+              isHiding: isHiding,
               icon: Icons.settings,
               title: 'Menu',
             ),
@@ -168,10 +172,12 @@ class _IconTextItem extends StatelessWidget {
   const _IconTextItem({
     Key? key,
     required this.deviceWidth,
+    required this.isHiding,
     required this.icon,
     required this.title,
   }) : super(key: key);
   final double deviceWidth;
+  final bool isHiding;
   final IconData icon;
   final String title;
 
@@ -179,17 +185,27 @@ class _IconTextItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 0.25 * (deviceWidth - 32),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: Stack(
         children: [
-          Icon(
-            icon,
-            color: Color(0xFF442C2E),
-            size: 24,
+          Align(
+            alignment: Alignment.topCenter,
+            child: Icon(
+              icon,
+              color: Color(0xFF442C2E),
+              size: 24,
+            ),
           ),
-          Text(
-            title,
-            style: TextStyle(fontSize: 16),
+          AnimatedOpacity(
+            opacity: isHiding ? 0 : 1,
+            curve: Curves.easeInQuart,
+            duration: Duration(milliseconds: 120),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Text(
+                title,
+                style: TextStyle(fontSize: 16),
+              ),
+            ),
           ),
         ],
       ),
