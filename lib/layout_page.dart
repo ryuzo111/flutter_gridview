@@ -69,9 +69,10 @@ class _ResponsiveDesignPage extends StatelessWidget {
           //   height: 60,
           // ),
           Spacer(),
-          SizedBox(
-            height: 42,
-            width: 300,
+          ConstrainedBox(
+            constraints: BoxConstraints(
+              maxWidth: 650,
+            ),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 textStyle: TextStyle(
