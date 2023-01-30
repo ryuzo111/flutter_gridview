@@ -51,13 +51,14 @@ class _ResponsiveDesignPage extends StatelessWidget {
             //   height: 60,
             // ),
             Spacer(),
-            FlutterLogo(
-              size: height * 0.3,
-            ),
+            if (isPortrait)
+              FlutterLogo(
+                size: height * 0.3,
+              ),
             // const SizedBox(
             //   height: 60,
             // ),
-            Spacer(),
+            if (isPortrait) Spacer(),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 50),
               child: Text(
